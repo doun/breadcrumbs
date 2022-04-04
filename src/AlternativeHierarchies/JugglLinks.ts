@@ -32,6 +32,7 @@ export async function getJugglLinks(
       links.forEach((link) => {
         const lineNo = link.position.start.line;
         const line = lines[lineNo];
+        if(!line)return;
 
         // Check the line for wikilinks, and return an array of link.innerText
         const linksInLine =

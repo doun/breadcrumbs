@@ -15742,6 +15742,8 @@ async function getJugglLinks(plugin, files) {
             var _a, _b, _c, _d, _e, _f, _g;
             const lineNo = link.position.start.line;
             const line = lines[lineNo];
+            if (!line)
+                return;
             // Check the line for wikilinks, and return an array of link.innerText
             const linksInLine = (_c = (_b = (_a = line
                 .match(splitLinksRegex)) === null || _a === void 0 ? void 0 : _a.map((link) => link.slice(2, link.length - 2))) === null || _b === void 0 ? void 0 : _b.map((innerText) => innerText.split("|")[0])) !== null && _c !== void 0 ? _c : [];
